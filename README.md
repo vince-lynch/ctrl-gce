@@ -1,19 +1,3 @@
-# Install and Use CTRL on Google Compute Engine
-
-![](demo.png)
-
-Scripts + guides on how to set up a virtual machine on [Google Compute Engine](https://cloud.google.com/compute/) capable of running and using [Salesforce](https://www.salesforce.com)'s very large text-generating model [CTRL](https://github.com/salesforce/ctrl) to generate high-quality text based on conditional parameters.
-
-The CTRL model is so large (12 GB on disk, 15.5 GB GPU VRAM when loaded, even more system RAM during runtime) that it will currently not fit into a free Colaboratory or Kaggle Notebook. Therefore, this setup is necessary to play with the model for now.
-
-## Machine Setup Instructions
-
-The VM these instructions create is the minimum, lowest-cost configuration powerful enough to run CTRL without going out-of-memory (P100 GPU, 8 vCPU, 30 GB RAM, preemptible). With this configuration, having the VM up will cost **$0.51/hr**.
-
-1. Make sure the `gcloud` command line tool is [set up](https://cloud.google.com/sdk/gcloud/) on your local computer and up-to-date (can update via `gcloud components update`).
-2. Make sure your Google Cloud Platform project tied to your local computer's `gcloud` has enough [quota](https://console.cloud.google.com/iam-admin/quotas) in the `us-central-1` region (8 CPUs and 1 P100; these should be available by default, but request more quota if they aren't)
-3. Make sure your GCE project has billing set up.
-4. On your local computer, run this `gcloud` command in a terminal which creates a VM with the specs noted above:
 
 ```sh
 gcloud compute instances create ctrl \
