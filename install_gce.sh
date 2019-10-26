@@ -4,18 +4,17 @@
 git clone https://github.com/salesforce/ctrl.git
 mv ctrl/* .
 
+# Install Tensorflow-GPU :) 
+sudo pip2 install tensorflow-gpu==1.14 
+
 # Cython is needed to compile fastBPE
-sudo python -m pip install Cython
+pip2 install Cython
 
 # Patch the TensorFlow estimator package
-FILE="/usr/local/lib/python2.7/dist-packages/tensorflow_estimator/python/estimator/keras.py"
-sudo patch -b "$FILE" estimator.patch
+sudo patch -b /usr/local/lib/python2.7/dist-packages/tensorflow_estimator/python/estimator/keras.py estimator.patch
 
 # Install fastBPE
-git clone https://github.com/glample/fastBPE.git
-cd fastBPE
-sudo python setup.py install
-cd ..
+pip2 install fastBPE
 
 # Download the 512-length model if specified, 256-length otherwise
 if [ "$1" = "512" ]
