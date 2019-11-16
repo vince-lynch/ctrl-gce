@@ -14,7 +14,7 @@ sudo pip2 install Cython
 sudo patch -b /usr/local/lib/python2.7/dist-packages/tensorflow_estimator/python/estimator/keras.py estimator.patch
 
 # Install fastBPE
-pip2 install fastBPE
+sudo pip2 install fastBPE
 
 # Download the 512-length model if specified, 256-length otherwise
 if [ "$1" = "512" ]
