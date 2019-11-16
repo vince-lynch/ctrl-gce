@@ -8,7 +8,7 @@ mv ctrl/* .
 sudo pip2 install tensorflow-gpu==1.14 
 
 # Cython is needed to compile fastBPE
-pip2 install Cython
+sudo pip2 install Cython
 
 # Patch the TensorFlow estimator package
 sudo patch -b /usr/local/lib/python2.7/dist-packages/tensorflow_estimator/python/estimator/keras.py estimator.patch
