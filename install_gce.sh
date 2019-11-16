@@ -9,6 +9,8 @@ sudo pip2 install tensorflow-gpu==1.14
 
 # Cython is needed to compile fastBPE
 sudo pip2 install Cython
+# For own own script we need PythonMysql. 
+sudo pip2 install mysql-connector-python
 
 # Patch the TensorFlow estimator package
 sudo patch -b /usr/local/lib/python2.7/dist-packages/tensorflow_estimator/python/estimator/keras.py estimator.patch
